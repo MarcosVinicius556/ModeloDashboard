@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import './header.css';
+import { HeaderContainer, HeaderContent, ToggleButton } from './Header.styled';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import { FcHome, FcEngineering, FcSalesPerformance, FcPlus } from 'react-icons/fc';
 
 function Header() {
     const[ fullMenu, setFullMenu ] = useState(false);
@@ -9,26 +11,40 @@ function Header() {
   }
 
   return (
-    <header className={fullMenu ? `expand-container` : ''}>
-        {/* {fullMenu 
-        ? (<AiOutlineMenuFold size={45} onClick={handleExpandMenu} className='change-menu-btn'/>) 
-        : (<AiOutlineMenuUnfold size={45} onClick={handleExpandMenu} className='change-menu-btn'/>) 
-        } */}
-
-        <button onClick={handleExpandMenu} className='change-menu-btn' >{fullMenu ? 'Close' : 'Open' }</button> 
+    <HeaderContainer fullmenu={fullMenu ? 1 : 0}>
+         <ToggleButton fullmenu={fullMenu ? 1 : 0} onClick={handleExpandMenu} >
+           {fullMenu ?  (
+                          <AiOutlinePlus size={25} />
+                        ) 
+                      : (
+                        <AiOutlineMinus size={25} />
+                      )}
+         </ToggleButton> 
 
         
-        <div className={`header-container ${fullMenu ? 'show-container' : ''}`}>
-            <h1>My Bills</h1>
-            <img src="" alt="foto do usuário" />
-            <div className="header-options">
-                <a href="/dashboard">Home</a>
-                <a href="/profile">Configurações de perfil</a>
-                <a href="/show-bills">Visualizar gastos</a>
-                <a href="/add-bills">Cadastrar um novo gasto</a>
-            </div>
-        </div>
-    </header>
+         <HeaderContent fullmenu={fullMenu ? 1 : 0}>
+             <h1>My Bills</h1>
+             <img src="" alt="foto do usuário" />
+             <span>
+                 <a href="/dashboard">
+                  <FcHome size={25} />
+                  Home
+                 </a>
+                 <a href="/profile">
+                  <FcEngineering size={25} />
+                  Configurações de perfil
+                 </a>
+                 <a href="/show-bills">
+                  <FcSalesPerformance />
+                  Visualizar gastos
+                 </a>
+                 <a href="/add-bills">
+                  <FcPlus size={25} />
+                  Cadastrar um novo gasto
+                 </a>
+             </span>
+         </HeaderContent>
+    </HeaderContainer>
   )
 }
 

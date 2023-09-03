@@ -1,5 +1,13 @@
-.loading-btn {
-    width: 80%;
+import styled, { keyframes } from 'styled-components';
+
+const spin = keyframes`
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+`;
+
+export const Loading = styled.button`
+
+    width: 100%;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -13,23 +21,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.loading-btn:hover {
-    background: #8c1db1;
-    color: #dbdada;
-}
 
-.loader {
+    /* &:hover {
+        background: #8c1db1;
+        color: #dbdada;
+} */
+`; 
+
+export const Loader = styled.div`
     border: 5px solid #f3f3f3;
     border-top: 5px solid #3498db;
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    animation: ${spin} 2s linear infinite;
+`;

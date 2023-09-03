@@ -1,45 +1,24 @@
-import { useState } from 'react';
-import BaseInput from '../../components/BaseInput';
-import SubmitButton from '../../components/SubmitButton';
-import LoadingButton from '../../components/LoadingButton';
-import './login.css';
+import { FormContainer } from '../../components/Form/Form.style';
+import { FormPage } from './FormRegister.style.jsx';
 
 function Login() {
 
-  const[ userName, setUsername ] = useState('');
-  const[ pass, setPass ] = useState('');
-  const[ loading, setLoading ] = useState(false);
-
   return (
-    <div className='login-page'>
-        <form className="login-card" onSubmit={ () => console.log('submit') }>
-            <h1>MyBills</h1>
-            <BaseInput 
-              labelText="Nome" 
-              type="text" 
-              placeHolder="Digite seu nome" 
-              changeState={setUsername}
-            />
-            <BaseInput 
-              labelText="Senha"
-              type="password" 
-              placeHolder="*******" 
-              changeState={setPass}
-            />
-            {
-              loading ?
-              (
-                <LoadingButton />    
-              ) : (
-                <SubmitButton text="Entrar" />
-              )
-            }
-            
-            <span>
-            <a href='/register'> Ainda não possui cadastro? se cadastre aqui</a>
-            </span>
-        </form>
-    </div>
+      <FormPage>
+          <FormContainer width={500} height={500} onSubmit={ () => console.log('submit') }>
+              <h1>MyBills</h1>
+              <label>Nome de Usuário</label>
+              <input type="text" placeholder="@User" />
+
+              <label>Senha</label>
+              <input type="password" placeholder="******"/>
+
+              <input type="submit" value="Entrar" />
+              <span>
+              <a href='/'> Não possui um cadastro? Cadastre-se já! </a>
+              </span>
+          </FormContainer>
+        </FormPage>
   )
 }
 

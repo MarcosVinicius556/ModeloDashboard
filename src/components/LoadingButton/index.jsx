@@ -1,9 +1,9 @@
-import './loading-button.css';
+import { Loading, Loader } from './LoadingButton.styles';
 
 export default function LoadingButton() {
     return(
-        <button className="loading-btn"> 
-            <div className="loader"></div>
-        </button>
+        <Loading> 
+            <Loader></Loader>
+        </Loading>
     );
 }
