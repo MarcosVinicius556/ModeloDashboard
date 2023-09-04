@@ -4,7 +4,7 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { FcHome, FcEngineering, FcSalesPerformance, FcPlus } from 'react-icons/fc';
 
 function Header() {
-    const[ fullMenu, setFullMenu ] = useState(false);
+    const[ fullMenu, setFullMenu ] = useState(true);
 
   function handleExpandMenu() {
     setFullMenu(!fullMenu);

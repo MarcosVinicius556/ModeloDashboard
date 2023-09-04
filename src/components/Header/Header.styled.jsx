@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
     justify-content: center;
     align-items: center;
     
-    ${({ fullmenu }) => fullmenu === 1 
+    ${({ fullmenu }) => fullmenu === 1
             ? `height: 100px; 
                width: 100px;
                border-radius: 50%;`
@@ -22,13 +22,14 @@ export const HeaderContainer = styled.header`
     position: absolute;
     padding: .2em;
     
-    background: #474747;
+    background: #474747e6;
+    backdrop-filter: blur(15px);
     transition: all .2s ease-in-out;
-    border: 1px solid #2e2e2e;
+    /* border: 1px solid #2e2e2e; */
     
-    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
+    /* -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75); */
 `;
 
 export const ToggleButton = styled.button`
@@ -47,7 +48,7 @@ export const ToggleButton = styled.button`
     cursor: pointer;
     transition: all .2s ease-in-out;
 
-    ${({ fullmenu }) => fullmenu === 1 
+    ${({ fullmenu }) => fullmenu === 1
             ? `align-self: center;`
             : `
             align-self: flex-start;
@@ -61,7 +62,7 @@ export const ToggleButton = styled.button`
 `;
 
 export const HeaderContent = styled.div`
-${({ fullmenu }) => fullmenu 
+${({ fullmenu }) => fullmenu === 1
         ? 'display: none;'
         : 'display: flex;'
  }
@@ -114,7 +115,7 @@ ${({ fullmenu }) => fullmenu
         }
 
         &:hover {
-            background: #5e5d5d;
+            background: #424242;
         }
     }
 

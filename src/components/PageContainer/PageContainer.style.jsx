@@ -5,10 +5,10 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
+    padding: .5em;
 `;
 
 export const Content = styled.div`
-    border: 2px solid green;
     height: 100vh;
     width: 100%;
 
