@@ -16,10 +16,11 @@ export const HeaderContainer = styled.header`
             : `
                height: 600px; 
                width: 350px;
-               border-radius: 4px;`}
+               border-radius: 4px;
+               z-index: 99;`}
     
     
-    position: absolute;
+    position: fixed;
     padding: .2em;
     
     background: #474747e6;
