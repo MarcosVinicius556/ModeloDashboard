@@ -1,6 +1,6 @@
 import BillGraphCard from "../../components/BillGraphCard";
 import PageContainer from "../../components/PageContainer";
-import { BillGraph, TableContainer } from './Dashboard.style';
+import { BillGraph, TableContainer, BillDescription } from './Dashboard.style';
 import { useState } from 'react';
 
 function Dashboard() {
@@ -17,7 +17,7 @@ function Dashboard() {
       legend: {
         fontSize: '18px',
         labels: {
-          colors: '#fff',
+          colors: '#3a3a3a',
         }
       }
     });
@@ -37,11 +37,13 @@ function Dashboard() {
   return (
     <PageContainer>
       <BillGraph>
-        <h1>Bem vindo "nomeDoUsuario"</h1>
+        {/* <h1>Bem vindo "nomeDoUsuario"</h1> */}
         <BillGraphCard options={salaryOptions} />
+        <BillDescription>
+          Salário: 2700
+        </BillDescription>
       </BillGraph>
       <TableContainer>
-
       </TableContainer>
     </PageContainer>
   )

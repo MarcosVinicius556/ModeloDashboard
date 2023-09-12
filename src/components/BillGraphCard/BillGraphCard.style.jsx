@@ -5,7 +5,7 @@ export const GraphCard = styled(ReactApexChart)`
     width: 70%;
     max-width: 40em;
     margin: 1em;
-    background: #5e5e5e76;
+    background: #f0f0f0dc;
     border-radius: 15px;
 
     color: #fff;

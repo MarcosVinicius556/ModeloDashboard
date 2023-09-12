@@ -32,3 +32,16 @@ export const TableContainer = styled.div`
     height: 100%;
 `;
 
+export const BillDescription = styled.div`
+    width: 12em;
+    height: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #202020;
+    background: #f0f0f0dc;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+`;
+
