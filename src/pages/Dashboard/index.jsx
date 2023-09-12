@@ -37,8 +37,8 @@ function Dashboard() {
   return (
     <PageContainer>
       <BillGraph>
-      <BillGraphCard options={salaryOptions} />
-        
+        <h1>Bem vindo "nomeDoUsuario"</h1>
+        <BillGraphCard options={salaryOptions} />
       </BillGraph>
       <TableContainer>
 
