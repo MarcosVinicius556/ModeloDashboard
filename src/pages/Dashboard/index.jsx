@@ -1,7 +1,6 @@
-import BillGraphCard from "../../components/BillGraphCard";
-import PageContainer from "../../components/PageContainer";
-import { BillGraph, TableContainer, BillDescription } from './Dashboard.style';
 import { useState } from 'react';
+import PageContainer from "../../components/PageContainer";
+import { Introduction, TableContainer, Table } from './Dashboard.style';
 
 function Dashboard() {
 
@@ -36,14 +35,30 @@ function Dashboard() {
 
   return (
     <PageContainer>
-      <BillGraph>
-        {/* <h1>Bem vindo "nomeDoUsuario"</h1> */}
-        <BillGraphCard options={salaryOptions} />
-        <BillDescription>
-          Salário: 2700
-        </BillDescription>
-      </BillGraph>
+      <Introduction>
+        {/* <BillGraphCard options={salaryOptions} /> */}
+      </Introduction>
       <TableContainer>
+        <Table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Descrição</th>
+              <th>Valor Gasto</th>
+              <th>Data</th>
+              <th>Tipo de pagamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Café</td>
+              <td>R$ 28,50</td>
+              <td>14/09/2023</td>
+              <td>Cartão de crédito</td>
+            </tr>
+          </tbody>
+        </Table>
       </TableContainer>
     </PageContainer>
   )

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import ReactApexChart from 'react-apexcharts';
 
-export const BillGraph = styled.div`
+export const Introduction = styled.div`
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background: #583966;
+    background: #b823e6;
     margin-bottom: 2em;
 
     & h1 {
@@ -28,20 +27,31 @@ export const BillGraph = styled.div`
 `;
 
 export const TableContainer = styled.div`
-    border: 2px solid red; 
-    height: 100%;
+    height: 800px;
+    border-radius: 10px;
+    background: #b823e6;
 `;
 
-export const BillDescription = styled.div`
-    width: 12em;
-    height: 6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #202020;
-    background: #f0f0f0dc;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 15px;
+export const Table = styled.table`
+    color: #fff;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+
+    & thead {
+        background: #7f44a7;
+        font-size: 24px;
+        height: 3em;
+        width: 100%;
+    }
+
+    & tbody {
+        font-size: 20px;
+
+        & tr {
+        }
+    }
+
 `;
 
