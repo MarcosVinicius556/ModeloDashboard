@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import PageContainer from "../../components/PageContainer";
-import { Introduction, TableContainer, Table } from './Dashboard.style';
+import { DeleteButton, EditButton, Introduction, Table, TableContainer, TableFunctions } from './Dashboard.style';
+import BillGraphCard from '../../components/BillGraphCard';
+import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
+
 
 function Dashboard() {
 
@@ -36,7 +39,7 @@ function Dashboard() {
   return (
     <PageContainer>
       <Introduction>
-        {/* <BillGraphCard options={salaryOptions} /> */}
+      <BillGraphCard options={salaryOptions} />
       </Introduction>
       <TableContainer>
         <Table>
@@ -47,6 +50,7 @@ function Dashboard() {
               <th>Valor Gasto</th>
               <th>Data</th>
               <th>Tipo de pagamento</th>
+              <th>Funções</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +60,29 @@ function Dashboard() {
               <td>R$ 28,50</td>
               <td>14/09/2023</td>
               <td>Cartão de crédito</td>
+              <TableFunctions>
+                  <EditButton>
+                    <AiOutlineEdit size={30}/>
+                  </EditButton>
+                  <DeleteButton>
+                    <AiOutlineDelete size={30}/>
+                  </DeleteButton>
+              </TableFunctions>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Café</td>
+              <td>R$ 28,50</td>
+              <td>14/09/2023</td>
+              <td>Cartão de crédito</td>
+              <TableFunctions>
+                  <EditButton>
+                    <AiOutlineEdit size={30}/>
+                  </EditButton>
+                  <DeleteButton>
+                    <AiOutlineDelete size={30}/>
+                  </DeleteButton>
+              </TableFunctions>
             </tr>
           </tbody>
         </Table>
