@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-    margin-left: 1.5em;
-    margin-top: 1.5em;
+    z-index: 99;
+    bottom: 5em;
+    right: 5em;
     
     display: flex;
     flex-direction: column;
@@ -12,7 +13,8 @@ export const HeaderContainer = styled.header`
     ${({ fullmenu }) => fullmenu === 1
             ? `height: 100px; 
                width: 100px;
-               border-radius: 50%;`
+               border-radius: 50%;
+               `
             : `
                height: 600px; 
                width: 350px;
@@ -23,14 +25,12 @@ export const HeaderContainer = styled.header`
     position: fixed;
     padding: .2em;
     
-    background: #474747e6;
-    backdrop-filter: blur(15px);
+    background: #47474776;
+    backdrop-filter: blur(3px);
     transition: all .2s ease-in-out;
-    /* border: 1px solid #2e2e2e; */
-    
-    /* -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75); */
+    &:hover {
+        background: #474747cc;
+    }
 `;
 
 export const ToggleButton = styled.button`
@@ -52,9 +52,8 @@ export const ToggleButton = styled.button`
     ${({ fullmenu }) => fullmenu === 1
             ? `align-self: center;`
             : `
-            align-self: flex-start;
-            top: .3em;
-            left: 1em;`}
+            bottom: 1.7em;
+            right: 1.7em;`}
 
     &:hover {
         transform: scale(1.5);

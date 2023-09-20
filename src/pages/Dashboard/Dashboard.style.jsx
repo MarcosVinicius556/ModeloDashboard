@@ -1,36 +1,40 @@
 import styled from 'styled-components';
 
-export const Introduction = styled.div`
-    height: 70%;
+export const Main = styled.div`
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    background: #9c9c9c;
-    margin-bottom: 2em;
-
-    & h1 {
-        margin-bottom: 1em;
-        font-size: 34px;
-        color: #fff;
-        background: #5e5e5e76;
-        border-radius: 15px;
-        width: 80%;
-        max-width: 600px;
-        height: 90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
+    flex-direction: row;
 `;
 
 export const TableContainer = styled.div`
-    height: 800px;
-    border-radius: 10px;
-    background: #9c9c9c;
-    margin-bottom: 5em;
+    width: 50%;
+    max-width: 800px;
+    height: 600px;
+    border-radius: 15px;
+    background: #fff;
+    margin-left: .5em;
+`;
+
+export const GraphContainer = styled.div`
+    width: 50%;
+    max-width: 500px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    background: #fff;
+    padding: 1em;
+    margin-right: .5em;
+
+    & h2 {
+        margin-top: -4em;
+        margin-bottom: 3em;
+    }
 `;
 
 export const Table = styled.table`
@@ -41,22 +45,24 @@ export const Table = styled.table`
     
     
     & thead {
-        background: #5c73f8;
+        background: #7f6dbd;
         font-size: 24px;
         height: 3em;
         width: 100%;
+        
         /* Pegando o primeiro e último "th" e aplicando um border-radius nas pontas */
         & th:nth-child(1) {
-            border-radius: 5px 0px 0px 0px;
+            border-radius: 15px 0px 0px 0px;
         }
 
         & th:nth-last-child(1) {
-            border-radius: 0px 5px 0px 0px;
+            border-radius: 0px 15px 0px 0px;
         }
     }
     
     & tbody {
         font-size: 20px;
+        color: #323232;
 
         & tr {
             height: 2px;
@@ -84,14 +90,14 @@ export const TableFunctions = styled.th`
 `;
 
 export const DeleteButton = styled.button`
-    background: #fa5f5f;
+    background: #fc8282;
     outline: none;
     border: none;
     border-radius: 5px;
     transition: all .2s ease-in-out;
 
     &:hover{
-        background: #883232;
+        background: #bb5c5c;
     }
 `;
 
@@ -103,7 +109,7 @@ export const EditButton = styled.button`
     transition: all .2s ease-in-out;
 
     &:hover {
-        background: #4b5f45;
+        background: #97bd8b;
     }
 `;
 

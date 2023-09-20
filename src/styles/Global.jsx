@@ -17,6 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     & body {
-        background: #4d4d4d;
+        background: #cacaca;
     }
 `;
