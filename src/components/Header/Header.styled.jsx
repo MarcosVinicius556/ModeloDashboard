@@ -1,71 +1,106 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
-    z-index: 99;
-    bottom: 5em;
-    right: 5em;
+export const MobileHeaderContainer = styled.header`
     
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    max-width: 450px;
+    border-radius: 15px;
+    padding: 1em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    
+    background: #614ecc;
+    z-index: 99;
     ${({ fullmenu }) => fullmenu === 1
-            ? `height: 100px; 
-               width: 100px;
-               border-radius: 50%;
-               `
-            : `
-               height: 600px; 
-               width: 350px;
-               border-radius: 4px;
-               z-index: 99;`}
-    
-    
-    position: fixed;
-    padding: .2em;
-    
-    background: #47474776;
-    backdrop-filter: blur(3px);
-    transition: all .2s ease-in-out;
-    &:hover {
-        background: #474747cc;
+                ? `
+                    width: 100px;
+                    & a { 
+                        color: transparent;
+                    }
+                    
+                `
+                : `
+                height: 600px; 
+                width: 350px;
+                border-radius: 4px;
+                z-index: 99;`}
+
+    /* Trataremos o header de forma diferente quando se tratar de um mobile */
+    @media screen and (max-width: 1024px) {
+        z-index: 99;
+        bottom: 5em;
+        right: 5em;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        ${({ fullmenu }) => fullmenu === 1
+                ? `height: 100px; 
+                width: 100px;
+                border-radius: 50%;
+                `
+                : `
+                height: 600px; 
+                width: 350px;
+                border-radius: 4px;
+                z-index: 99;`}
+        
+        
+        position: fixed;
+        padding: .2em;
+        
+        background: #47474776;
+        backdrop-filter: blur(3px);
+        transition: all .2s ease-in-out;
+        &:hover {
+            background: #474747cc;
+        }
     }
+    
 `;
 
 export const ToggleButton = styled.button`
+    @media screen and (max-width: 1024px) {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        visibility: visible;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        background: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
 
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    visibility: visible;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    background: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
+        ${({ fullmenu }) => fullmenu === 1
+                ? `align-self: center;`
+                : `
+                bottom: 1.7em;
+                right: 1.7em;`}
 
-    ${({ fullmenu }) => fullmenu === 1
-            ? `align-self: center;`
-            : `
-            bottom: 1.7em;
-            right: 1.7em;`}
-
-    &:hover {
-        transform: scale(1.5);
-        filter: drop-shadow(-1px -1px 2px #eeeeee);   
+        &:hover {
+            transform: scale(1.5);
+            filter: drop-shadow(-1px -1px 2px #eeeeee);   
+        }
     }
+   
 `;
 
-export const HeaderContent = styled.div`
-${({ fullmenu }) => fullmenu === 1
-        ? 'display: none;'
-        : 'display: flex;'
- }
+export const MobileHeaderContent = styled.div`
+
+    /* Trataremos o header de forma diferente quando se tratar de um mobile */
+    @media screen and (max-width: 1024px) {
+        ${({ fullmenu }) => fullmenu === 1
+            ? 'display: none;'
+            : 'display: flex;'
+    }
     width: 100%;
     align-items: center;
     flex-direction: column;
@@ -117,7 +152,7 @@ ${({ fullmenu }) => fullmenu === 1
         &:hover {
             background: #424242;
         }
+    }  
     }
-
-    
+  
 `;
