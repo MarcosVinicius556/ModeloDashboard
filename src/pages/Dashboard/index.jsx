@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PageContainer from "../../components/PageContainer";
-import { DeleteButton, EditButton, GraphContainer, TableContainer, Table, TableFunctions, Main } from './Dashboard.style';
+import { DeleteButton, EditButton, GraphContainer, TableContainer, Table, Main } from './Dashboard.style';
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 import ReactApexChart from 'react-apexcharts';
 
@@ -43,50 +43,35 @@ function Dashboard() {
                   />
           </GraphContainer>
           <TableContainer>
-            <Table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Descrição</th>
-                  <th>Valor Gasto</th>
-                  <th>Data</th>
-                  <th>Tipo de pagamento</th>
-                  <th>Funções</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Café</td>
-                  <td>R$ 28,50</td>
-                  <td>14/09/2023</td>
-                  <td>Cartão de crédito</td>
-                  <TableFunctions>
-                      <EditButton>
-                        <AiOutlineEdit size={30}/>
-                      </EditButton>
-                      <DeleteButton>
-                        <AiOutlineDelete size={30}/>
-                      </DeleteButton>
-                  </TableFunctions>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Café</td>
-                  <td>R$ 28,50</td>
-                  <td>14/09/2023</td>
-                  <td>Cartão de crédito</td>
-                  <TableFunctions>
-                      <EditButton>
-                        <AiOutlineEdit size={30}/>
-                      </EditButton>
-                      <DeleteButton>
-                        <AiOutlineDelete size={30}/>
-                      </DeleteButton>
-                  </TableFunctions>
-                </tr>
-            </tbody>
-          </Table>
+          <Table>
+                <thead>
+                  <tr>
+                    <th scope="col">Id.</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Forma de Pagamento</th>
+                    <th scope="col">#</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td data-label="Id">1</td>
+                      <td data-label="Descrição">Café</td>
+                      <td data-label="Valor">R$ 28,50</td>
+                      <td data-label="Cadastrado">28/08/2023</td>
+                      <td data-label="Pagamento">Cartão de crédito</td>
+                      <td data-label="#">
+                        <DeleteButton onClick={(e) => console.log('teste')} >
+                          <AiOutlineDelete color='#FFF' size={17}/>
+                        </DeleteButton>
+                        <EditButton onClick={() => console.log('teste')} >
+                          <AiOutlineEdit color='#FFF' size={17}/>
+                        </EditButton>
+                      </td>
+                    </tr>
+                </tbody>
+              </Table>
         </TableContainer>
         </Main>
     </PageContainer>

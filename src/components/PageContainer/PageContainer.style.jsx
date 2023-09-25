@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    position: fixed;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
     padding: .5em;
+    overflow: scroll;
 `;
 
 export const Content = styled.div`
@@ -16,7 +18,9 @@ export const Content = styled.div`
 export const TitleContainer = styled.div`
 
     position: absolute;
-    margin: 3em 5em;
+    margin-left: 8em;
+    margin-top: 2em;
+    margin-bottom: 1em;
 
     & h2{
         font-size: 40px;
@@ -24,6 +28,13 @@ export const TitleContainer = styled.div`
 
     & h6 {
 
+    }
+
+    @media screen and ( max-width: ${({theme}) => theme.size.smallScreen} ) {
+        width: 100%;
+        margin: 0;
+        position: relative;
+        text-align: center;
     }
 
 `;

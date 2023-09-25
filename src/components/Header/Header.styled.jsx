@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const MobileHeaderContainer = styled.header`
     
     position: absolute;
-    height: 100%;
+    height: 40%;
     width: 30%;
     max-width: 450px;
     border-radius: 15px;
@@ -11,14 +11,11 @@ export const MobileHeaderContainer = styled.header`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #614ecc;
+    background: #614ecc9e;
     z-index: 99;
     ${({ fullmenu }) => fullmenu === 1
                 ? `
                     width: 100px;
-                    & a { 
-                        color: transparent;
-                    }
                     
                 `
                 : `
@@ -28,7 +25,7 @@ export const MobileHeaderContainer = styled.header`
                 z-index: 99;`}
 
     /* Trataremos o header de forma diferente quando se tratar de um mobile */
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: ${({theme}) => theme.size.smallScreen}) {
         z-index: 99;
         bottom: 5em;
         right: 5em;
@@ -56,15 +53,12 @@ export const MobileHeaderContainer = styled.header`
         background: #47474776;
         backdrop-filter: blur(3px);
         transition: all .2s ease-in-out;
-        &:hover {
-            background: #474747cc;
-        }
     }
     
 `;
 
 export const ToggleButton = styled.button`
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: ${({theme}) => theme.size.smallScreen}) {
         width: 50px;
         height: 50px;
         position: absolute;
@@ -94,9 +88,29 @@ export const ToggleButton = styled.button`
 `;
 
 export const MobileHeaderContent = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & h1 {
+        display: none;
+    }
+     
+    & img {
+        border: 2px solid #272727;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        margin-bottom: 2em;
+    }
 
     /* Trataremos o header de forma diferente quando se tratar de um mobile */
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: ${({theme}) => theme.size.smallScreen}) {
         ${({ fullmenu }) => fullmenu === 1
             ? 'display: none;'
             : 'display: flex;'
@@ -155,4 +169,49 @@ export const MobileHeaderContent = styled.div`
     }  
     }
   
+`;
+
+export const HeaderLinks = styled.div`
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    ${({ fullmenu }) => fullmenu === 1 ? 
+    `
+    & span {
+        
+    }
+    ` 
+    : 
+    `
+    & span {
+        
+    }
+    `}
+    
+
+    & a {
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        font-size: 22px;
+        transition: all .2s ease-in-out;
+        align-items: center;
+
+        & svg {
+           margin-right: 1em;
+        }
+
+        & + a {
+            border-top: 1px solid #999797;
+        }
+
+        &:hover {
+            background: #424242;
+        }
+    }
 `;
